@@ -13,6 +13,7 @@ sig
   val print : t -> unit
 end
 
+(* Implements Integer Queue *)
 module IntQueue : IntQueue =
 struct
   type t = int list
