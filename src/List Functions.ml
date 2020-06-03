@@ -91,12 +91,12 @@ let rec lconcat l =
 
 lconcat [[1; 2; 3;]; [6; 5; 4]; [9]];;
 
-let rec lfoldl f e l = 
+let rec lfoldr f e l = 
   match l with
     |[] -> e
-    |h::t -> f(h, (lfoldl f e t));;
+    |h::t -> f(h, (lfoldr f e t));;
 
-lfoldl (fun (x, y) -> x - y) 0 [1; 2; 3];;
+lfoldr (fun (x, y) -> x - y) 0 [1; 2; 3];;
 
 let rec lzip l1 l2 = 
   match l1, l2 with
